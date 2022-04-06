@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+      <table border = 1>
+         <thead>
+            <td>Prediction</td>
+            <td>Image</td>
+         </thead>
+
+        {% for row in rows %}
+            <tr>
+               <td>{{row["prediction"]}}</td>
+               <td><img id="img" class="mb-4" src="{{row['image_path']}}" alt="" width="256" height="256"></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form class="form-upload" method="post" enctype="multipart/form-data">
+      <h1 class="h3 mb-3 font-weight-normal">Please Upload Image</h1>
+      <input autofocus class="form-control" id="image" name="image" required type="file"><br>
+      <button type = "submit" value="predict" name = "predict" class="btn btn-lg btn-primary btn-block">Predict</button>
+      {% if image_loc %}
+      <img id="img" class="mb-4" src="static/{{ image_loc }}" alt="" width="256" height="256">
+      <h3 id="nm" class="h3 mb-4 font-weight-normal">Prediction: {{ p }}</h3><br>
+      {% endif %}
+    </form>
+{% endblock content %}
